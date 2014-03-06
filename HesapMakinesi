@@ -1,0 +1,71 @@
+import java.util.Scanner;
+
+public class Makine {
+	
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		int number1=0;
+		int number2=0;
+		int result;
+		String operation;
+		
+		System.out.print("Enter first integer:");
+		try{
+			number1 = input.nextInt();
+		}
+		catch(Exception e){
+			System.out.print("Not an integer!");
+			System.exit(-1);
+		}
+		
+		System.out.print("Enter second integer:");
+		try{
+			number2 = input.nextInt();
+		}
+		catch(Exception e){
+			System.out.print("Not an integer!");
+			System.exit(-1);
+		}
+		
+		System.out.print("Enter an operation:");
+		operation = input.next();
+		
+		if(operation.equals("+"))
+		{
+			result = number1+number2;
+			System.out.printf("Result is %d\n", result);
+		}
+		
+		if(operation.equals("-"))
+		{
+			result = number1-number2;
+			System.out.printf("Result is %d\n", result);
+		}
+		
+		if(operation.equals("*"))
+		{
+			result = number1 * number2;
+			System.out.printf("Result is %d\n", result);
+		}
+		
+		if(operation.equals("/"))
+		{
+			if(number2 == 0)
+			{
+				System.out.print("Enter another integer to number2!");
+			}
+			else
+			{
+				result = number1/number2;
+				System.out.printf("Result is %d\n", result);
+			}
+		}
+		
+		else
+		{
+			System.out.print("Enter an operation!");
+		}
+	}
+
+}
